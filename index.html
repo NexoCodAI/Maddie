@@ -72,7 +72,7 @@
 
     <script>
         // Number of images in your images folder
-        const imageCount = 10; // Change this to match your actual number of images
+        const imageCount = 5; // Change this to match your actual number of images
         
         // Supported image extensions
         const extensions = ['jpg', 'jpeg', 'png', 'webp'];
@@ -92,7 +92,7 @@
             // Fallback for different extensions (optional)
             img.onerror = function() {
                 for (let ext of extensions) {
-                    if (ext !== 'jpg') { // already tried jpg
+                    if (ext !== 'jpg') { // already tried png
                         this.src = `images/img${i}.${ext}`;
                         break;
                     }
