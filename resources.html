@@ -2,29 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interactive Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources</title>
   <!-- Link to your external stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome CDN for default icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papNMVB2Q6L3rsmKVCh3hxc5p1X1YI2ERZyD6wFqFmQ1I5G5C8mv+bw5e2GouZZdVjkt6G8+04K9+H8zj+Q5ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Interactive Links Page</h1>
-  </header>
 
+  <!-- Navigation Menu -->
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html" class="menu-link">Principal Page</a></li>
+      <li><a href="resources.html" class="menu-link">Resources</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
   <main>
-    <nav>
-      <ul>
-        <li><a href="https://example.com/page1" class="interactive-link">Page 1</a></li>
-        <li><a href="https://example.com/page2" class="interactive-link">Page 2</a></li>
-        <li><a href="https://example.com/page3" class="interactive-link">Page 3</a></li>
-        <li><a href="https://example.com/page4" class="interactive-link">Page 4</a></li>
+    <h1>Support Us</h1>
+    <section id="external-links">
+      <ul class="external-menu">
+        <li>
+          <a href="https://gofundme.com" target="_blank" rel="noopener" class="external-link">
+            <i class="fa-solid fa-hands-helping"></i> GoFundMe
+          </a>
+        </li>
+        <li>
+          <a href="https://youpay.me" target="_blank" rel="noopener" class="external-link">
+            <i class="fa-solid fa-money-bill-wave"></i> YouPay.me
+          </a>
+        </li>
+        <li>
+          <a href="https://blessa.io" target="_blank" rel="noopener" class="external-link">
+            <i class="fa-solid fa-heart"></i> Blessa.io
+          </a>
+        </li>
+        <li>
+          <a href="https://patreon.com" target="_blank" rel="noopener" class="external-link">
+            <i class="fa-brands fa-patreon"></i> Patreon
+          </a>
+        </li>
       </ul>
-    </nav>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
 </body>
 </html>
+
