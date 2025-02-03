@@ -4,9 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>My pictures</title>
+  <title>My Pictures</title>
 </head>
 <body>
+
+  <!-- Navigation Menu -->
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html" class="menu-link">Principal Page</a></li>
+      <li><a href="resources.html" class="menu-link">Resources</a></li>
+    </ul>
+  </nav>
 
   <!-- Age Verification Modal -->
   <div id="ageModal">
@@ -28,7 +36,7 @@
   </div>
 
   <!-- Main Content (Initially hidden behind the modal) -->
-  <div id="content">
+  <div id="content" style="display:none;">
     <h1 class="gallery-title">My Pictures</h1>
     <div class="gallery-container">
       <!-- Gallery items will be inserted here -->
@@ -56,8 +64,7 @@
   </script>
 
   <script>
-    // When the page loads, the modal is visible, blocking the content.
-    // Add event listeners for the buttons.
+    // Add event listeners for the Age Verification buttons.
     document.getElementById('btnOver').addEventListener('click', function () {
       // Hide the age verification modal and display the main content.
       document.getElementById('ageModal').style.display = 'none';
