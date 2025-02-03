@@ -121,3 +121,42 @@ body {
                 margin-bottom: 30px;
             }
         }
+
+    /* Modal overlay styles */
+    #ageModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    /* Modal content styles */
+    #ageModalContent {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Input and button styles */
+    #ageModalContent input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    #ageModalContent button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
